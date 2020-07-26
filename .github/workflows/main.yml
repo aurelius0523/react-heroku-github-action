@@ -17,4 +17,4 @@ jobs:
         with: 
           node-version: 12.14.0
       - run: npm install
-     
+      - run: git push heroku develop:master
