@@ -1,0 +1,20 @@
+name: deploy to heroku
+
+on: 
+  push:
+    branches: 
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu
+    steps:
+      - name: checkout 
+        uses: actions/checkout@v1
+        
+      - name: setup node
+        uses: actions/setup-node@v1
+        with: 
+          node-version: 12.14.0
+      - run: npm install
+     
