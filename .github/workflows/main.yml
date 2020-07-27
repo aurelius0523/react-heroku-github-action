@@ -16,8 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with: 
           node-version: 12.14.0
-      - run: git branch -a
-      - run: git push https://git.heroku.com/pacific-temple-93679.git remotes/origin/develop:master
-      - run: git remote get-url origin
-#      - run: npm install
-
+      - name: Add remote origin
+        run: |
+          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+      - name: Deploy to Heroku
+        run: |
+          git push heroku remotes/origin/develop:master -f
