@@ -17,8 +17,7 @@ jobs:
         with: 
           node-version: 12.14.0
       - run: git branch -a
-      - run: git remote get-url origin
-      - run: git remote get-url heroku
-#      - run: npm install
       - run: git push https://git.heroku.com/pacific-temple-93679.git develop:master
+      - run: git remote get-url origin
+#      - run: npm install
 
