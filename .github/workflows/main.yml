@@ -17,3 +17,5 @@ jobs:
         with: 
           node-version: 12.14.0
       - run: git branch -a
+      - run: git remote get-url origin
+      - run: git remote get-url heroku
